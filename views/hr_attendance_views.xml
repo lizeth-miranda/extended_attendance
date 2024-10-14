@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="extended_hr_attendance_view_form" model="ir.ui.view">
+        <field name="name">extended.hr.attendance.form</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_in']" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_restricted_user', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='check_out']" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_restricted_user', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <field name="is_restricted_user" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

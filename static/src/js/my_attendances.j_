@@ -1,0 +1,14 @@
+odoo.define('extended_attendance.my_attendances', function (require) {
+    "use strict";
+    const { patch } = require('@web/core/utils/patch');
+    const MyAttendances = require('hr_attendance.my_attendances');
+
+    patch(MyAttendances.prototype, 'extended_attendance.my_attendances', {
+        checkAlert: function () {
+            console.log("Overriding checkAlert method");
+            return Promise.resolve();
+        },
+    });
+
+    return MyAttendances;
+});
