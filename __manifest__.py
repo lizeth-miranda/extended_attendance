@@ -1,6 +1,6 @@
 {
     'name': 'Extended Attendance',
-    'version': '1.1',
+    'version': '1.2',
     'category': 'Human Resources',
     'depends': ['web', 'hr_attendance'],
     'data': [
